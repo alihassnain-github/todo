@@ -1,9 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
+import connectDB from "./db/connection.js";
 
 import todoRoutes from "./routes/todo.routes.js";
 
+dotenv.config();
 const app = express();
+connectDB();
 
 // middlewares
 app.use(express.json());
